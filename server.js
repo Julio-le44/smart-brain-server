@@ -40,4 +40,3 @@ app.post('/imageUrl', (req, res) => {handleAPI(req,res)})
 app.listen(PORT, () => {
     console.log(`app is running on port ${PORT}`)
 })
-
