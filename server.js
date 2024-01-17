@@ -10,11 +10,12 @@ import {handleImage, handleAPI} from './controllers/image.js';
 const db = knex({
     client: 'pg',
     connection: {
-        host : '127.0.0.1',
+        connectionString: "postgres://smart_brain_iurm_user:FSgMW9IutPz7woe9QY4MHa3eEjNRxx04@dpg-cmk0h47qd2ns73bn2r2g-a/smart_brain_iurm",
+        host : 'dpg-cmk0h47qd2ns73bn2r2g-a.oregon-postgres.render.com',
         port : 5432,
-        user : 'postgres',
-        password : 'PatriotsFan44',
-        database : 'smart-brain'
+        user : 'smart_brain_iurm_user',
+        password : 'FSgMW9IutPz7woe9QY4MHa3eEjNRxx04',
+        database : 'smart_brain_iurm'
   }
 })
 
