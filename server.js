@@ -10,7 +10,7 @@ import {handleImage, handleAPI} from './controllers/image.js';
 const db = knex({
     client: 'pg',
     connection: {
-        connectionString: process.env.CONNETION_STRING,
+        connectionString: process.env.CONNECTION_STRING,
         host : process.env.DATABASE,
         port : 5432,
         user : process.env.USER,
