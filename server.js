@@ -6,6 +6,7 @@ import {handleSignin} from './controllers/signin.js';
 import {handleRegister} from './controllers/register.js';
 import {handleProfile} from './controllers/profile.js';
 import {handleImage, handleAPI} from './controllers/image.js';
+import { handleDeleteAcc } from './controllers/delete.js';
 
 const db = knex({
     client: 'pg',
@@ -23,7 +24,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-const port = process.env.PORT
+const port = 10000
 
 app.get('/',(req, res) => {
     res.json('congrats on loading the page')
@@ -37,6 +38,8 @@ app.get('/profile/:id', (req, res) => {handleProfile(req, res, db)})
 app.put('/image', (req, res) => {handleImage(req, res, db)})
 
 app.post('/imageUrl', (req, res) => {handleAPI(req,res)})
+
+app.delete('/delete', (req, res) => {handleDeleteAcc(req,res,bcrypt,db)})
 
 app.listen(port , () => {
     console.log(`app is running on port ${port}`)
