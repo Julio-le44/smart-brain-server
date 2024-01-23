@@ -5,11 +5,11 @@ export const handleSignin = (req, res, bcrypt, db) => {
         if(isValid) {
             return db.select('*').from('users').where('email', '=', data[0].email)
             .then(user => res.json(user[0]))
-            .catch(err => console.log('unable to get user'))
+            .catch(err => res.status(400).json('unable to get user'))
         } else {
-            res.status(400).json('wrong credentials')
+            res.status(400).json('unable to process user')
         }
     })
-    .catch(err => res.status(400).json('unable to process user'))
+    .catch(err => res.status(400).json('unable to process users'))
 }
 
